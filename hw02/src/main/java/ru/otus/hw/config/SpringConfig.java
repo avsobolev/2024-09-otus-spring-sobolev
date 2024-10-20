@@ -42,8 +42,8 @@ public class SpringConfig {
     }
 
     @Bean
-    TestConfigImpl testConfig() {
-        return new TestConfigImpl();
+    TestConfigImpl testConfig(@Value("${test.rightAnswersCountToPass}") int rightAnswersCountToPass) {
+        return new TestConfigImpl(rightAnswersCountToPass);
     }
 
     @Bean
